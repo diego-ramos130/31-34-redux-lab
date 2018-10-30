@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "eslint . && jest --coverage",
-    "lint": "eslint ."
+    "test": "jest --coverage",
+    "watch": "webpack-dev-server --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",
