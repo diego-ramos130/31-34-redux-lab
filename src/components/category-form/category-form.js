@@ -9,7 +9,7 @@ class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.section || emptyState;
-  }
+  };
 
   handleChange = (event) => {
     const { value } = event.target;

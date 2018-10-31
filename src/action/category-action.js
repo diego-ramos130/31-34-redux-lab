@@ -1,6 +1,6 @@
 'use strict';
 
-import uuid from 'uuid/v5';
+import uuid from 'uuid/v4';
 
 export const create = ({ name }) => {
   return {
