@@ -11,14 +11,16 @@ class Dashboard extends React.Component {
       <div>
         <CategoryForm onComplete={this.props.categoryCreate}/>
         { this.props.categories.map(currentCategory =>
-          <categoryItem category={currentCategory}/>)}
+        <CategoryItem category={currentCategory} onDelete={this.props.categoryRemove} onUpdate={this.props.categoryUpdate}/>)}
       </div>
-    ); // 12 & 13 = category items.
+    );
   }
 }
 
 Dashboard.propTypes = {
   categoryCreate: PropTypes.func,
+  categoryRemove: PropTypes.func,
+  categoryUpdate: PropTypes.func,
   categories: PropTypes.array,
 };
 
@@ -32,6 +34,12 @@ const mapDispatchToProps = (dispatch) => {
     categoryCreate: (category) => {
       dispatch(categoryActions.create(category));
     },
+    categoryRemove: (category) => {
+      dispatch(categoryActions.remove(category));
+    },
+    categoryUpdate: (category) => {
+      dispatch(categoryActions.update(category));
+    }
   };
 };
 
